@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/system/config/config.dart';
 
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
-import 'package:flutter_proj_template/system/theme/theme.dart';
+import 'package:flutter_proj_template/theme/theme.dart';
+import 'package:flutter_proj_template/config.dart';
 
 /// A widget that provides all providers used in app
 class MyMultiProvider extends StatelessWidget {

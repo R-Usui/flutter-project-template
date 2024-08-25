@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/system/config/config.dart';
-import 'package:flutter_proj_template/system/localize/language.dart';
+
 import 'package:provider/provider.dart';
+
+import 'package:flutter_proj_template/config.dart';
+import 'package:flutter_proj_template/localize/language.dart';
 
 class LocalizedString {
   const LocalizedString(

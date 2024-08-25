@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import 'package:flutter_proj_template/system/theme/theme.dart';
-import 'package:flutter_proj_template/system/config/config.dart';
-import 'package:flutter_proj_template/system/localize/language.dart';
-import 'package:flutter_proj_template/system/localize/localized_string.dart';
-import 'package:flutter_proj_template/system/provider.dart';
+import 'package:flutter_proj_template/theme/theme.dart';
+import 'package:flutter_proj_template/config.dart';
+import 'package:flutter_proj_template/localize/language.dart';
+import 'package:flutter_proj_template/localize/localized_string.dart';
+import 'package:flutter_proj_template/provider.dart';
 
 void main() {
   runApp(const MyApp());
