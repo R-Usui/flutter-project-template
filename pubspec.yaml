@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.1.2
+  provider: 
+  go_router:
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +19,47 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: MPLUSRounded1c
+      fonts:
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Thin.ttf
+          weight: 100
+        # - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraLight.ttf
+        #   weight: 200
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Light.ttf
+          weight: 300
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf
+          weight: 400
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf
+          weight: 500
+        # - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-SemiBold.ttf
+        #   weight: 600
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf
+          weight: 700
+        - asset: fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf
+          weight: 800
+        - asset: fonts//M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf
+          weight: 800
+
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto/Roboto-Thin.ttf
+          weight: 100
+        # - asset: fonts/Roboto/Roboto-ExtraLight.ttf
+        #   weight: 200
+        - asset: fonts/Roboto/Roboto-Light.ttf
+          weight: 300
+        - asset: fonts/Roboto/Roboto-Regular.ttf
+          weight: 400
+        - asset: fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        # - asset: fonts/Roboto/Roboto-SemiBold.ttf
+        #   weight: 600
+        - asset: fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
+        # - asset: fonts/Roboto/Roboto-ExtraBold.ttf
+        #   weight: 800
+        - asset: fonts/Roboto/Roboto-Black.ttf
+          weight: 900
+        

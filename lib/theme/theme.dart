@@ -3,6 +3,26 @@ import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 
 class ThemeNotifier extends ChangeNotifier {
+  ThemeNotifier() {
+    // ====================================================
+    // Text Button
+
+    _textButtonTheme = TextButtonThemeData(
+      style: TextButton.styleFrom(
+        textStyle: TextStyle(
+          fontSize: 20,
+          fontFamily: _fontFamily,
+          fontFamilyFallback: _fontFamilyFallback,
+        ),
+      ),
+    );
+
+    // ====================================================
+    // Text
+
+    _textTheme = const TextTheme().apply(fontSizeFactor: 2.0);
+  }
+
   // ====================================================
   //Material version
   bool _useMaterial3 = true;
@@ -42,13 +62,21 @@ class ThemeNotifier extends ChangeNotifier {
   final _pageTransitionsTheme = const PageTransitionsTheme();
 
   // ====================================================
+  // Font
+
+  final String _fontFamily = "MPLUSRounded1c";
+
+  final List<String> _fontFamilyFallback = ["Roboto"];
+
+  // ====================================================
+  // Text
+
+  late TextTheme _textTheme;
+
+  // ====================================================
   // Text Button
 
-  final _textButtonTheme = TextButtonThemeData(
-    style: TextButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20),
-    ),
-  );
+  late TextButtonThemeData _textButtonTheme;
 
   // ====================================================
   // Theme Mode
@@ -68,7 +96,9 @@ class ThemeNotifier extends ChangeNotifier {
   ThemeData get theme => ThemeData(
         useMaterial3: _useMaterial3,
         colorScheme: _lightColorScheme,
-        fontFamily: null, //should be added in the future
+        fontFamily: _fontFamily,
+        fontFamilyFallback: _fontFamilyFallback,
+        textTheme: _textTheme,
         textButtonTheme: _textButtonTheme,
         pageTransitionsTheme: _pageTransitionsTheme,
       );
@@ -76,7 +106,9 @@ class ThemeNotifier extends ChangeNotifier {
   ThemeData get darkTheme => ThemeData(
         useMaterial3: _useMaterial3,
         colorScheme: _darkColorScheme,
-        fontFamily: null, //should be added in the future
+        fontFamily: _fontFamily,
+        fontFamilyFallback: _fontFamilyFallback,
+        textTheme: _textTheme,
         textButtonTheme: _textButtonTheme,
         pageTransitionsTheme: _pageTransitionsTheme,
       );
