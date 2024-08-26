@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import 'package:flutter_proj_template/config.dart';
+import 'package:flutter_proj_template/config/config_notifier.dart';
 import 'package:flutter_proj_template/localize/language.dart';
 
 class LocalizedString {

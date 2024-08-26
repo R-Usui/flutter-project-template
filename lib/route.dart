@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proj_template/config/config.dart';
 import 'package:flutter_proj_template/ui/debug_window.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,10 +12,11 @@ final router = GoRouter(
           body: Stack(
             children: [
               child,
-              const Align(
-                alignment: Alignment.topLeft,
-                child: DebugWindow(),
-              ),
+              if (Config.showDebugWindow)
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: DebugWindow(),
+                ),
             ],
           ),
         );
