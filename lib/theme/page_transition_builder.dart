@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyPageTransitionsBuilder extends PageTransitionsBuilder {
-  const MyPageTransitionsBuilder();
+class VerticalPageTransitionsBuilder extends PageTransitionsBuilder {
+  const VerticalPageTransitionsBuilder();
 
   @override
   Widget buildTransitions<T>(
@@ -11,30 +11,30 @@ class MyPageTransitionsBuilder extends PageTransitionsBuilder {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    var slideTween = Tween(begin: const Offset(0, 0.5), end: Offset.zero);
+    final tween = Tween(
+      begin: const Offset(0.0, 1.0),
+      end: Offset.zero,
+    );
+    final curvedAnimation = CurvedAnimation(
+      parent: animation,
+      curve: Curves.ease,
+    );
 
-    var scaleTween = Tween(begin: 0.0, end: 1.0);
-    var scaleCurveTween = CurveTween(curve: Curves.easeOutCubic);
-    scaleTween.chain(scaleCurveTween);
+    final secondaryTween = Tween(
+      begin: Offset.zero,
+      end: const Offset(0.0, 1.0),
+    );
 
-    var secondarySlideTween =
-        Tween(begin: Offset.zero, end: const Offset(0, -0.5));
-
-    var secondaryScaleTween = Tween(begin: 1.0, end: 0.0);
-    var secondaryScaleCurveTween = CurveTween(curve: Curves.easeOutCubic);
-    secondaryScaleTween.chain(secondaryScaleCurveTween);
+    final secondaryCurvedAnimation = CurvedAnimation(
+      parent: secondaryAnimation,
+      curve: Curves.ease,
+    );
 
     return SlideTransition(
-      position: slideTween.animate(animation),
-      child: ScaleTransition(
-        scale: scaleTween.animate(animation),
-        child: SlideTransition(
-          position: secondarySlideTween.animate(secondaryAnimation),
-          child: ScaleTransition(
-            scale: secondaryScaleTween.animate(secondaryAnimation),
-            child: child,
-          ),
-        ),
+      position: secondaryTween.animate(secondaryCurvedAnimation),
+      child: SlideTransition(
+        position: tween.animate(curvedAnimation),
+        child: child,
       ),
     );
   }

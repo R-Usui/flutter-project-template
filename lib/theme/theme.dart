@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proj_template/theme/page_transition_builder.dart';
 
 // import 'package:provider/provider.dart';
 
@@ -59,8 +60,12 @@ class ThemeNotifier extends ChangeNotifier {
   // ====================================================
   // Page Transition
 
-  final _pageTransitionsTheme = const PageTransitionsTheme();
-
+  final _pageTransitionsTheme = const PageTransitionsTheme(
+    builders: {
+      TargetPlatform.windows: VerticalPageTransitionsBuilder(),
+      TargetPlatform.macOS: VerticalPageTransitionsBuilder(),
+    },
+  );
   // ====================================================
   // Font
 

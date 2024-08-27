@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_proj_template/ui/terminal_page.dart';
+import 'package:flutter_proj_template/ui/debug/terminal_page.dart';
 
 class Pages {
-  static final terminal = _Page("/terminal", const TerminalPage());
+  static final terminal = _Page("/terminal", const DebugTerminalPage());
   static final sample01 = _Page("/sample01", const Placeholder());
   static final sample02 = _Page("/sample02", const Placeholder());
 

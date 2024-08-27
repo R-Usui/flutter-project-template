@@ -9,14 +9,14 @@ import 'package:flutter_proj_template/localize/language.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/theme/theme.dart';
 
-class DebugWindow extends StatefulWidget {
-  const DebugWindow({super.key});
+class DebugMenuWindow extends StatefulWidget {
+  const DebugMenuWindow({super.key});
 
   @override
-  State<DebugWindow> createState() => _DebugWindowState();
+  State<DebugMenuWindow> createState() => _DebugMenuWindowState();
 }
 
-class _DebugWindowState extends State<DebugWindow> {
+class _DebugMenuWindowState extends State<DebugMenuWindow> {
   bool isOpen = false;
 
   @override
@@ -45,7 +45,7 @@ class _DebugWindowState extends State<DebugWindow> {
                     _ThemeModeSettingButton(),
                     _SwitchColorSchemeSeedButton(),
                     _LanguageSettingButton(),
-                    _PageTransitionButtons(),
+                    _GoToTerminalPageButton(),
                   ],
                 ),
               ),
@@ -56,25 +56,8 @@ class _DebugWindowState extends State<DebugWindow> {
   }
 }
 
-class _PageTransitionButtons extends StatelessWidget {
-  const _PageTransitionButtons();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TextButton(
-          onPressed: () {
-            context.push(Pages.terminal.path);
-          },
-          child: Text(_LocalizedStrings.goToTerminal.of(context)),
-        ),
-      ],
-    );
-  }
-}
+//=========================================================
+//Widgets to change theme
 
 class _MaterialVersionSettingButton extends StatelessWidget {
   const _MaterialVersionSettingButton();
@@ -142,6 +125,9 @@ class _SwitchColorSchemeSeedButton extends StatelessWidget {
   }
 }
 
+//=========================================================
+//Widget to change config
+
 class _LanguageSettingButton extends StatelessWidget {
   const _LanguageSettingButton();
 
@@ -158,15 +144,32 @@ class _LanguageSettingButton extends StatelessWidget {
   }
 }
 
-class _LocalizedStrings {
-  static var goToTerminal = LocalizedString(
-    "Go to ${Pages.terminal.path}",
-    {
-      Language.japanese: "${Pages.terminal.path} へ行く",
-      Language.kana: "${Pages.terminal.path} へ いく",
-    },
-  );
+//=========================================================
+//Widget to go to terminal page
 
+class _GoToTerminalPageButton extends StatelessWidget {
+  const _GoToTerminalPageButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TextButton(
+          onPressed: () {
+            context.push(Pages.terminal.path);
+          },
+          child: Text(_LocalizedStrings.goToTerminal.of(context)),
+        ),
+      ],
+    );
+  }
+}
+
+//=========================================================
+
+class _LocalizedStrings {
   static const switchMaterialVersion = LocalizedString(
     "Switch Material Version",
     {
@@ -196,6 +199,14 @@ class _LocalizedStrings {
     {
       Language.japanese: "言語を変更",
       Language.kana: "げんごをへんこう",
+    },
+  );
+
+  static var goToTerminal = LocalizedString(
+    "Go to ${Pages.terminal.path}",
+    {
+      Language.japanese: "${Pages.terminal.path} へ行く",
+      Language.kana: "${Pages.terminal.path} へ いく",
     },
   );
 }
