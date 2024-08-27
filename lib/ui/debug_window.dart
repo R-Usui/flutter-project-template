@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proj_template/route/pages.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:provider/provider.dart';
@@ -42,6 +43,7 @@ class _DebugWindowState extends State<DebugWindow> {
                   children: [
                     _MaterialVersionSettingButton(),
                     _ThemeModeSettingButton(),
+                    _SwitchColorSchemeSeedButton(),
                     _LanguageSettingButton(),
                     _PageTransitionButtons(),
                   ],
@@ -65,19 +67,9 @@ class _PageTransitionButtons extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            context.push("/home");
+            context.push(Pages.terminal.path);
           },
-          child: const Text(
-            "go to /home",
-          ),
-        ),
-        TextButton(
-          onPressed: () {
-            context.push("/sub");
-          },
-          child: const Text(
-            "go to /sub",
-          ),
+          child: Text(_LocalizedStrings.goToTerminal.of(context)),
         ),
       ],
     );
@@ -126,6 +118,30 @@ class _ThemeModeSettingButton extends StatelessWidget {
   }
 }
 
+class _SwitchColorSchemeSeedButton extends StatelessWidget {
+  const _SwitchColorSchemeSeedButton();
+
+  @override
+  Widget build(BuildContext context) {
+    var themeNotifier = context.watch<ThemeNotifier>();
+
+    return TextButton(
+      onPressed: () {
+        themeNotifier.setColorSchemeSeed(
+          switch (themeNotifier.colorSchemeSeed) {
+            Colors.red => Colors.blue,
+            Colors.blue => Colors.purple,
+            _ => Colors.red,
+          },
+        );
+      },
+      child: Text(
+        _LocalizedStrings.switchColorSchemeSeed.of(context),
+      ),
+    );
+  }
+}
+
 class _LanguageSettingButton extends StatelessWidget {
   const _LanguageSettingButton();
 
@@ -143,7 +159,15 @@ class _LanguageSettingButton extends StatelessWidget {
 }
 
 class _LocalizedStrings {
-  static var switchMaterialVersion = const LocalizedString(
+  static var goToTerminal = LocalizedString(
+    "Go to ${Pages.terminal.path}",
+    {
+      Language.japanese: "${Pages.terminal.path} へ行く",
+      Language.kana: "${Pages.terminal.path} へ いく",
+    },
+  );
+
+  static const switchMaterialVersion = LocalizedString(
     "Switch Material Version",
     {
       Language.japanese: "マテリアルバージョンを変更",
@@ -151,7 +175,7 @@ class _LocalizedStrings {
     },
   );
 
-  static var switchThemeMode = const LocalizedString(
+  static const switchThemeMode = LocalizedString(
     "Switch Theme Mode",
     {
       Language.japanese: "テーマモードを変更",
@@ -159,7 +183,15 @@ class _LocalizedStrings {
     },
   );
 
-  static var switchLanguage = const LocalizedString(
+  static const switchColorSchemeSeed = LocalizedString(
+    "Switch Color Scheme Seed",
+    {
+      Language.japanese: "カラースキームシードを変更",
+      Language.kana: "からーすきーむしーどをへんこう",
+    },
+  );
+
+  static const switchLanguage = LocalizedString(
     "Switch Language",
     {
       Language.japanese: "言語を変更",
