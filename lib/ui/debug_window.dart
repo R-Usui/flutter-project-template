@@ -55,9 +55,7 @@ class _DebugWindowState extends State<DebugWindow> {
 }
 
 class _PageTransitionButtons extends StatelessWidget {
-  const _PageTransitionButtons({
-    super.key,
-  });
+  const _PageTransitionButtons();
 
   @override
   Widget build(BuildContext context) {
