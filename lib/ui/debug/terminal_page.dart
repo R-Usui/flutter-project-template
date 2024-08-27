@@ -9,17 +9,33 @@ class DebugTerminalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ...Pages.values.skip(1).map((page) {
-          return TextButton(
-            onPressed: () {
-              context.go(page.path);
-            },
-            child: Text(page.path),
-          );
-        })
-      ],
+    return Align(
+      alignment: Alignment.topCenter,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var page in Pages.values)
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: SizedBox(
+                    width: 400,
+                    child: TextButton(
+                      onPressed: () {
+                        context.go(page.path);
+                      },
+                      child: Text(
+                        page.path,
+                        //),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -34,19 +34,33 @@ class _DebugMenuWindowState extends State<DebugMenuWindow> {
           icon: isOpen ? const Icon(Icons.close) : const Icon(Icons.settings),
         ),
         if (isOpen)
-          const Expanded(
-            child: Card(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(5),
+                ),
+                border:
+                    Border.all(color: Theme.of(context).colorScheme.secondary),
+              ),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     _MaterialVersionSettingButton(),
                     _ThemeModeSettingButton(),
                     _SwitchColorSchemeSeedButton(),
                     _LanguageSettingButton(),
                     _GoToTerminalPageButton(),
-                  ],
+                  ]
+                      .map((e) => Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: e,
+                          ))
+                      .toList(),
                 ),
               ),
             ),
@@ -158,7 +172,7 @@ class _GoToTerminalPageButton extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            context.push(Pages.terminal.path);
+            context.push(Pages.debugTerminal.path);
           },
           child: Text(_LocalizedStrings.goToTerminal.of(context)),
         ),
@@ -203,10 +217,10 @@ class _LocalizedStrings {
   );
 
   static var goToTerminal = LocalizedString(
-    "Go to ${Pages.terminal.path}",
+    "Go to ${Pages.debugTerminal.path}",
     {
-      Language.japanese: "${Pages.terminal.path} へ行く",
-      Language.kana: "${Pages.terminal.path} へ いく",
+      Language.japanese: "${Pages.debugTerminal.path} へ行く",
+      Language.kana: "${Pages.debugTerminal.path} へ いく",
     },
   );
 }

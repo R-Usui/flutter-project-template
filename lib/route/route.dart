@@ -25,11 +25,8 @@ final router = GoRouter(
           );
         },
         routes: [
-          ...Pages.values.map(
-            (page) {
-              return GoRoute(path: page.path, builder: page.builder);
-            },
-          ),
+          for (var page in Pages.values)
+            GoRoute(path: page.path, builder: page.builder),
         ]),
   ],
 );
