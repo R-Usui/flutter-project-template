@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_proj_template/config/config.dart';
 import 'package:flutter_proj_template/route/pages.dart';
-import 'package:flutter_proj_template/ui/debug/menu_window.dart';
+import 'package:flutter_proj_template/ui/debug/window.dart';
 
 final router = GoRouter(
-  initialLocation: "/terminal",
+  initialLocation: Pages.debugTerminal.path,
   routes: [
     ShellRoute(
         builder: (context, state, child) {
@@ -18,7 +18,7 @@ final router = GoRouter(
                 if (Config.showDebugWindow)
                   const Align(
                     alignment: Alignment.topLeft,
-                    child: DebugMenuWindow(),
+                    child: DebugWindowOpenButton(),
                   ),
               ],
             ),

@@ -9,15 +9,8 @@ import 'package:flutter_proj_template/localize/language.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/theme/theme.dart';
 
-class DebugMenuWindow extends StatefulWidget {
-  const DebugMenuWindow({super.key});
-
-  @override
-  State<DebugMenuWindow> createState() => _DebugMenuWindowState();
-}
-
-class _DebugMenuWindowState extends State<DebugMenuWindow> {
-  bool isOpen = false;
+class DebugWindowOpenButton extends StatelessWidget {
+  const DebugWindowOpenButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,45 +20,51 @@ class _DebugMenuWindowState extends State<DebugMenuWindow> {
       children: [
         IconButton(
           onPressed: () {
-            setState(() {
-              isOpen = !isOpen;
-            });
+            showDialog(context: context, builder: (_) => const _DebugWindow());
           },
-          icon: isOpen ? const Icon(Icons.close) : const Icon(Icons.settings),
+          icon: const Icon(Icons.settings),
         ),
-        if (isOpen)
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(5),
-                ),
-                border:
-                    Border.all(color: Theme.of(context).colorScheme.secondary),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    _MaterialVersionSettingButton(),
-                    _ThemeModeSettingButton(),
-                    _SwitchColorSchemeSeedButton(),
-                    _LanguageSettingButton(),
-                    _GoToTerminalPageButton(),
-                  ]
-                      .map((e) => Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: e,
-                          ))
-                      .toList(),
-                ),
-              ),
+      ],
+    );
+  }
+}
+
+class _DebugWindow extends StatelessWidget {
+  const _DebugWindow();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surface,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(5),
+            ),
+            border: Border.all(color: Theme.of(context).colorScheme.secondary),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                _MaterialVersionSettingButton(),
+                _ThemeModeSettingButton(),
+                _SwitchColorSchemeSeedButton(),
+                _LanguageSettingButton(),
+                _GoToTerminalPageButton(),
+              ]
+                  .map((e) => Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: e,
+                      ))
+                  .toList(),
             ),
           ),
-      ],
+        ),
+      ),
     );
   }
 }
