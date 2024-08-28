@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proj_template/localize/localized_string.dart';
 
 class ColorSchemeSamplePage extends StatelessWidget {
   const ColorSchemeSamplePage({super.key});
@@ -14,7 +15,7 @@ class ColorSchemeSamplePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Color Scheme Sample"),
+        title: Text(_LocalizedStrings.colorSchemeSample.of(context)),
       ),
       body: ListView(
         children: [
@@ -277,4 +278,14 @@ class ColorSample extends StatelessWidget {
       ],
     );
   }
+}
+
+class _LocalizedStrings {
+  static const colorSchemeSample = LocalizedString(
+    "Color Scheme Sample",
+    {
+      Language.japanese: "カラースキームサンプル",
+      Language.kana: "からーすきーむさんぷる",
+    },
+  );
 }

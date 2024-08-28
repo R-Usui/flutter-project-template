@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:flutter_proj_template/config/config_notifier.dart';
 import 'package:flutter_proj_template/localize/language.dart';
 
+export 'package:flutter_proj_template/localize/language.dart';
+
 class LocalizedString {
   const LocalizedString(
     this._defaultString, [

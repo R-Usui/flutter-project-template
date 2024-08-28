@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_proj_template/config/config_notifier.dart';
-import 'package:flutter_proj_template/localize/language.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/theme/theme.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proj_template/localize/localized_string.dart';
 
 class TypographySamplePage extends StatelessWidget {
   const TypographySamplePage({super.key});
@@ -11,7 +12,7 @@ class TypographySamplePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Typography Sample"),
+        title: Text(_LocalizedStrings.typograpySample.of(context)),
       ),
       body: ListView(
         children: <Widget>[
@@ -59,8 +60,27 @@ class _TypographySampleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child:
-          Text("$text ${style.fontSize?.toStringAsFixed(1)}pts", style: style),
+      child: Text(
+          "$text ${style.fontSize?.toStringAsFixed(1)}${_LocalizedStrings.pts.of(context)}",
+          style: style),
     );
   }
+}
+
+class _LocalizedStrings {
+  static const typograpySample = LocalizedString(
+    "Typography Sample",
+    {
+      Language.japanese: "タイポグラフィサンプル",
+      Language.kana: "たいぽぐらふぃさんぷる",
+    },
+  );
+
+  static const pts = LocalizedString(
+    "pt(s)",
+    {
+      Language.japanese: "ポイント",
+      Language.kana: "ぽいんと",
+    },
+  );
 }
