@@ -23,14 +23,14 @@ class FontSamplePage extends StatelessWidget {
         for (var weight in FontWeight.values) {
           result.add(
             _FontSampleText(
-              text: "ABC abc 123 あいう アイウ 海山森",
-              family: family.name,
+              englishText: "ABC abc 123",
+              japaneseText: "あいう アイウ 海山森",
+              family: family,
               weight: weight,
               isItalic: isItalic,
             ),
           );
         }
-
         result.add(
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
@@ -49,14 +49,16 @@ class FontSamplePage extends StatelessWidget {
 
 class _FontSampleText extends StatelessWidget {
   const _FontSampleText({
-    required this.text,
+    required this.englishText,
+    required this.japaneseText,
     required this.family,
     this.weight = FontWeight.normal,
     this.isItalic = false,
   });
 
-  final String text;
-  final String family;
+  final String englishText;
+  final String japaneseText;
+  final FontFamily family;
   final FontWeight weight;
   final bool isItalic;
 
@@ -73,9 +75,9 @@ class _FontSampleText extends StatelessWidget {
             textStyle: textTheme.titleLarge!
                 .copyWith(color: Theme.of(context).colorScheme.surface),
             child: Text(
-              text,
+              "$englishText ${family.isEnglishOnly ? japaneseText.replaceAll(RegExp("."), "*") : japaneseText}",
               style: textTheme.headlineMedium!.copyWith(
-                fontFamily: family,
+                fontFamily: family.name,
                 fontWeight: weight,
                 fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
               ),

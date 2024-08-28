@@ -1,8 +1,14 @@
-enum FontFamilies {
-  roboto("Roboto"),
-  mPlusRounded("MPLUSRounded1c");
+class FontFamilies {
+  static const roboto = FontFamily("Roboto");
+  static const mPlusRounded =
+      FontFamily("MPLUSRounded1c", isEnglishOnly: false);
 
-  const FontFamilies(this.name);
+  static const values = [roboto, mPlusRounded];
+}
+
+class FontFamily {
+  const FontFamily(this.name, {this.isEnglishOnly = true});
 
   final String name;
+  final bool isEnglishOnly;
 }
