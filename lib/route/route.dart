@@ -10,23 +10,17 @@ final router = GoRouter(
   initialLocation: Pages.debugTerminal.path,
   routes: [
     ShellRoute(
-        builder: (context, state, child) {
-          return Scaffold(
-            body: Stack(
-              children: [
-                child,
-                if (Config.showDebugWindow)
-                  const Align(
-                    alignment: Alignment.topLeft,
-                    child: DebugWindowOpenButton(),
-                  ),
-              ],
-            ),
-          );
-        },
-        routes: [
-          for (var page in Pages.values)
-            GoRoute(path: page.path, builder: page.builder),
-        ]),
+      builder: (context, state, child) {
+        return Scaffold(
+          floatingActionButton:
+              Config.showDebugWindow ? const DebugWindowOpenButton() : null,
+          body: child,
+        );
+      },
+      routes: [
+        for (var page in Pages.values)
+          GoRoute(path: page.path, builder: page.builder),
+      ],
+    ),
   ],
 );

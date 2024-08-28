@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/theme/page_transition_builder.dart';
+import 'package:flutter_proj_template/theme/vertical_page_transition_builder.dart';
 
 // import 'package:provider/provider.dart';
 
@@ -17,11 +17,6 @@ class ThemeNotifier extends ChangeNotifier {
         ),
       ),
     );
-
-    // ====================================================
-    // Text
-
-    _textTheme = const TextTheme().apply(fontSizeFactor: 2.0);
   }
 
   // ====================================================
@@ -74,11 +69,6 @@ class ThemeNotifier extends ChangeNotifier {
   final List<String> _fontFamilyFallback = ["Roboto"];
 
   // ====================================================
-  // Text
-
-  late TextTheme _textTheme;
-
-  // ====================================================
   // Text Button
 
   late TextButtonThemeData _textButtonTheme;
@@ -103,7 +93,6 @@ class ThemeNotifier extends ChangeNotifier {
         colorScheme: _lightColorScheme,
         fontFamily: _fontFamily,
         fontFamilyFallback: _fontFamilyFallback,
-        textTheme: _textTheme,
         textButtonTheme: _textButtonTheme,
         pageTransitionsTheme: _pageTransitionsTheme,
       );
@@ -113,7 +102,6 @@ class ThemeNotifier extends ChangeNotifier {
         colorScheme: _darkColorScheme,
         fontFamily: _fontFamily,
         fontFamilyFallback: _fontFamilyFallback,
-        textTheme: _textTheme,
         textButtonTheme: _textButtonTheme,
         pageTransitionsTheme: _pageTransitionsTheme,
       );

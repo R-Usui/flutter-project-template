@@ -14,17 +14,13 @@ class DebugWindowOpenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        IconButton(
-          onPressed: () {
-            showDialog(context: context, builder: (_) => const _DebugWindow());
-          },
-          icon: const Icon(Icons.settings),
-        ),
-      ],
+    return FloatingActionButton(
+      onPressed: () {
+        showDialog(context: context, builder: (_) => const _DebugWindow());
+      },
+      tooltip: "Open Debug Window",
+      mini: true,
+      child: const Icon(Icons.settings),
     );
   }
 }
@@ -34,9 +30,10 @@ class _DebugWindow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
+      alignment: Alignment.bottomRight,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(60.0),
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.surface,
@@ -45,22 +42,17 @@ class _DebugWindow extends StatelessWidget {
             ),
             border: Border.all(color: Theme.of(context).colorScheme.secondary),
           ),
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 _MaterialVersionSettingButton(),
                 _ThemeModeSettingButton(),
                 _SwitchColorSchemeSeedButton(),
                 _LanguageSettingButton(),
-                _GoToTerminalPageButton(),
-              ]
-                  .map((e) => Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: e,
-                      ))
-                  .toList(),
+                _GoToPageButtons(),
+              ],
             ),
           ),
         ),
@@ -160,8 +152,8 @@ class _LanguageSettingButton extends StatelessWidget {
 //=========================================================
 //Widget to go to terminal page
 
-class _GoToTerminalPageButton extends StatelessWidget {
-  const _GoToTerminalPageButton();
+class _GoToPageButtons extends StatelessWidget {
+  const _GoToPageButtons();
 
   @override
   Widget build(BuildContext context) {
@@ -169,13 +161,21 @@ class _GoToTerminalPageButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextButton(
-          onPressed: () {
-            context.push(Pages.debugTerminal.path);
-          },
-          child: Text(_LocalizedStrings.goToTerminal.of(context)),
-        ),
-      ],
+        Pages.debugTerminal,
+        Pages.colorSchemeSample,
+        Pages.typographySample,
+      ]
+          .map(
+            (page) => TextButton(
+              onPressed: () {
+                context.push(page.path);
+              },
+              child: Text(
+                _LocalizedStrings.goTo(page.path).of(context),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -215,11 +215,11 @@ class _LocalizedStrings {
     },
   );
 
-  static var goToTerminal = LocalizedString(
-    "Go to ${Pages.debugTerminal.path}",
-    {
-      Language.japanese: "${Pages.debugTerminal.path} へ行く",
-      Language.kana: "${Pages.debugTerminal.path} へ いく",
-    },
-  );
+  static LocalizedString goTo(String path) => LocalizedString(
+        "Go to $path",
+        {
+          Language.japanese: "$path へ行く",
+          Language.kana: "$path へ いく",
+        },
+      );
 }

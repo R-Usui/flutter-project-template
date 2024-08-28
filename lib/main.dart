@@ -9,6 +9,7 @@ import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/provider.dart';
 
 void main() {
+  // setupWindow();
   runApp(const MyApp());
 }
 
