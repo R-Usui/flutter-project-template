@@ -12,13 +12,13 @@ void main() {
   runApp(const MyApp());
 }
 
-/// Customized material app wrapped with [MyMultiProvider]
+/// Customized material app wrapped with [CompleteProvider]
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MyMultiProvider(
+    return CompleteProvider(
       builder: (context, child) {
         var themeNotifier = context.watch<ThemeNotifier>();
         return MaterialApp.router(

@@ -7,8 +7,8 @@ import 'package:flutter_proj_template/theme/theme.dart';
 import 'package:flutter_proj_template/config/config_notifier.dart';
 
 /// A widget that provides all providers used in app
-class MyMultiProvider extends StatelessWidget {
-  MyMultiProvider({
+class CompleteProvider extends StatelessWidget {
+  CompleteProvider({
     super.key,
     this.child,
     this.builder,
