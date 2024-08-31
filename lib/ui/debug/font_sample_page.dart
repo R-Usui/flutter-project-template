@@ -25,8 +25,8 @@ class FontSamplePage extends StatelessWidget {
             _FontSampleText(
               englishText: "ABC abc 123",
               japaneseText: "あいう アイウ 海山森",
-              family: family,
-              weight: weight,
+              fontFamily: family,
+              fontWeight: weight,
               isItalic: isItalic,
             ),
           );
@@ -51,15 +51,15 @@ class _FontSampleText extends StatelessWidget {
   const _FontSampleText({
     required this.englishText,
     required this.japaneseText,
-    required this.family,
-    this.weight = FontWeight.normal,
+    required this.fontFamily,
+    this.fontWeight = FontWeight.normal,
     this.isItalic = false,
   });
 
   final String englishText;
   final String japaneseText;
-  final FontFamily family;
-  final FontWeight weight;
+  final FontFamily fontFamily;
+  final FontWeight fontWeight;
   final bool isItalic;
 
   @override
@@ -71,14 +71,14 @@ class _FontSampleText extends StatelessWidget {
         children: [
           Tooltip(
             message:
-                "($family, ${weight.toString()}${isItalic ? ", Italic" : ""})",
+                "(${fontFamily.name}, ${fontWeight.toString()}${isItalic ? ", Italic" : ""})",
             textStyle: textTheme.titleLarge!
                 .copyWith(color: Theme.of(context).colorScheme.surface),
             child: Text(
-              "$englishText ${family.isEnglishOnly ? japaneseText.replaceAll(RegExp("."), "*") : japaneseText}",
+              "$englishText ${fontFamily.isEnglishOnly ? japaneseText.replaceAll(RegExp("."), "*") : japaneseText}",
               style: textTheme.headlineMedium!.copyWith(
-                fontFamily: family.name,
-                fontWeight: weight,
+                fontFamily: fontFamily.name,
+                fontWeight: fontWeight,
                 fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
               ),
             ),
