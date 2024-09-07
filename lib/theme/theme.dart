@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/theme/vertical_page_transition_builder.dart';
-
-// import 'package:provider/provider.dart';
+import 'package:flutter_proj_template/route/vertical_page_transition_builder.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   ThemeNotifier() {

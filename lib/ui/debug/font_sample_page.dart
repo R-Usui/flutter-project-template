@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
-import 'package:flutter_proj_template/theme/font_families.dart';
+import 'package:flutter_proj_template/font/font_family.dart';
 
 class FontSamplePage extends StatelessWidget {
   const FontSamplePage({super.key});
