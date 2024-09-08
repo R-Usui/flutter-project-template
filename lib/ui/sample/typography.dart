@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
+import 'package:flutter_proj_template/ui/devider.dart';
 
 class TypographySamplePage extends StatelessWidget {
   const TypographySamplePage({super.key});
@@ -9,6 +10,8 @@ class TypographySamplePage extends StatelessWidget {
     final textTheme = Theme.of(context)
         .textTheme
         .apply(displayColor: Theme.of(context).colorScheme.onSurface);
+
+    const devider = Devider();
 
     return Scaffold(
       appBar: AppBar(
@@ -22,22 +25,22 @@ class TypographySamplePage extends StatelessWidget {
               style: textTheme.displayMedium!),
           _TypographySampleText('Display Small',
               style: textTheme.displaySmall!),
-          const SizedBox(height: 10),
+          devider,
           _TypographySampleText('Headline Large',
               style: textTheme.headlineLarge!),
           _TypographySampleText('Headline Medium',
               style: textTheme.headlineMedium!),
           _TypographySampleText('Headline Small',
               style: textTheme.headlineSmall!),
-          const SizedBox(height: 10),
+          devider,
           _TypographySampleText('Title Large', style: textTheme.titleLarge!),
           _TypographySampleText('Title Medium', style: textTheme.titleMedium!),
           _TypographySampleText('Title Small', style: textTheme.titleSmall!),
-          const SizedBox(height: 10),
+          devider,
           _TypographySampleText('Label Large', style: textTheme.labelLarge!),
           _TypographySampleText('Label Medium', style: textTheme.labelMedium!),
           _TypographySampleText('Label Small', style: textTheme.labelSmall!),
-          const SizedBox(height: 10),
+          devider,
           _TypographySampleText('Body Large', style: textTheme.bodyLarge!),
           _TypographySampleText('Body Medium', style: textTheme.bodyMedium!),
           _TypographySampleText('Body Small', style: textTheme.bodySmall!),

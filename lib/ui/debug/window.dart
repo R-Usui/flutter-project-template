@@ -254,14 +254,11 @@ class _GoToPageButtons extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Pages.debugTerminal,
-        Pages.colorSchemeSample,
-        Pages.typographySample,
-      ]
+      children: Pages.values
           .map(
             (page) => TextButton(
               onPressed: () {
+                context.pop();
                 context.push(page.path);
               },
               child: Text(
@@ -288,7 +285,7 @@ class _LocalizedStrings {
   static LocalizedString goTo(String path) => LocalizedString(
         "Go to $path",
         {
-          Language.japanese: "$pathへ",
+          Language.japanese: "$path へ",
           Language.kana: "$path へ いく",
         },
       );

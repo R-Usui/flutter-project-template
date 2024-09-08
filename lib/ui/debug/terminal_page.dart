@@ -15,7 +15,13 @@ class DebugTerminalPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            for (var page in Pages.values)
+            for (var page in [
+              Pages.colorSchemeSample,
+              Pages.fontSample,
+              Pages.typographySample,
+              Pages.animationSample,
+              Pages.drawerSample,
+            ])
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(3.0),

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
+import 'package:flutter_proj_template/ui/devider.dart';
 
-class ColorSchemeSamplePage extends StatelessWidget {
-  const ColorSchemeSamplePage({super.key});
+class ColorSamplePage extends StatelessWidget {
+  const ColorSamplePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
 
-    final devider = Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-      child: Container(height: 3, color: colorScheme.onSurface),
-    );
+    const devider = Devider();
 
     return Scaffold(
       appBar: AppBar(
@@ -282,10 +280,10 @@ class ColorSample extends StatelessWidget {
 
 class _LocalizedStrings {
   static const colorSchemeSample = LocalizedString(
-    "Color Scheme Sample",
+    "Color Sample",
     {
-      Language.japanese: "カラースキームサンプル",
-      Language.kana: "からーすきーむさんぷる",
+      Language.japanese: "色サンプル",
+      Language.kana: "いろ さんぷる",
     },
   );
 }

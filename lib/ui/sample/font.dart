@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/font/font_family.dart';
+import 'package:flutter_proj_template/ui/devider.dart';
 
 class FontSamplePage extends StatelessWidget {
   const FontSamplePage({super.key});
@@ -11,44 +12,48 @@ class FontSamplePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(_LocalizedStrings.fontSample.of(context)),
       ),
-      body: ListView(children: _buildFontSampleTextList(context)),
+      body: ListView(
+        children: [
+          for (var family in FontFamilies.values)
+            for (var isItalic in [false, true]) ...[
+              FontSampleGroup(fontFamily: family, isItalic: isItalic),
+              const Devider(),
+            ]
+        ],
+      ),
     );
-  }
-
-  List<Widget> _buildFontSampleTextList(BuildContext context) {
-    List<Widget> result = [];
-
-    for (var family in FontFamilies.values) {
-      for (var isItalic in [false, true]) {
-        for (var weight in FontWeight.values) {
-          result.add(
-            _FontSampleText(
-              englishText: "ABC abc 123",
-              japaneseText: "あいう アイウ 海山森",
-              fontFamily: family,
-              fontWeight: weight,
-              isItalic: isItalic,
-            ),
-          );
-        }
-        result.add(
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: Container(
-              height: 3,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-          ),
-        );
-      }
-    }
-
-    return result;
   }
 }
 
-class _FontSampleText extends StatelessWidget {
-  const _FontSampleText({
+class FontSampleGroup extends StatelessWidget {
+  const FontSampleGroup({
+    required this.fontFamily,
+    required this.isItalic,
+    super.key,
+  });
+
+  final FontFamily fontFamily;
+  final bool isItalic;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        for (var weight in FontWeight.values)
+          _FontSample(
+            englishText: "ABC abc 123",
+            japaneseText: "あいう アイウ 海山森",
+            fontFamily: fontFamily,
+            fontWeight: weight,
+            isItalic: isItalic,
+          ),
+      ],
+    );
+  }
+}
+
+class _FontSample extends StatelessWidget {
+  const _FontSample({
     required this.englishText,
     required this.japaneseText,
     required this.fontFamily,

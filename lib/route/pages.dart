@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/ui/debug/font_sample_page.dart';
+import 'package:flutter_proj_template/ui/sample/animation.dart';
+import 'package:flutter_proj_template/ui/sample/font.dart';
 import 'package:flutter_proj_template/ui/sample/drawer.dart';
 
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_proj_template/ui/debug/terminal_page.dart';
-import 'package:flutter_proj_template/ui/debug/color_scheme_sample_page.dart';
-import 'package:flutter_proj_template/ui/debug/typography_sample_page.dart';
+import 'package:flutter_proj_template/ui/sample/color.dart';
+import 'package:flutter_proj_template/ui/sample/typography.dart';
 
 class Pages {
   static final debugTerminal =
       _Page("/debugTerminal", const DebugTerminalPage());
   static final colorSchemeSample =
-      _Page("/colorSchemeSample", const ColorSchemeSamplePage());
+      _Page("/colorSample", const ColorSamplePage());
   static final typographySample =
       _Page("/typographySample", const TypographySamplePage());
   static final fontSample = _Page("/fontSample", const FontSamplePage());
-  static final drawerSample =
-      _Page("/drawerSample", const DrawerSamplePage());
+  static final drawerSample = _Page("/drawerSample", const DrawerSamplePage());
+  static final animationSample =
+      _Page("/animationSample", const AnimationSamplePage());
 
   static final values = <_Page>[
     debugTerminal,
@@ -25,6 +27,7 @@ class Pages {
     typographySample,
     fontSample,
     drawerSample,
+    animationSample,
   ];
 }
 
