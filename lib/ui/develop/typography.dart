@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/ui/devider.dart';
 
-class TypographySamplePage extends StatelessWidget {
-  const TypographySamplePage({super.key});
+class TypographyPalettePage extends StatelessWidget {
+  const TypographyPalettePage({super.key});
 
   @override
   Widget build(BuildContext context) {

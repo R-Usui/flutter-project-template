@@ -4,16 +4,16 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_proj_template/config/config.dart';
 import 'package:flutter_proj_template/route/pages.dart';
-import 'package:flutter_proj_template/ui/debug/window.dart';
+import 'package:flutter_proj_template/ui/develop/window.dart';
 
 final router = GoRouter(
-  initialLocation: Pages.debugTerminal.path,
+  initialLocation: Pages.colorPalette.path,
   routes: [
     ShellRoute(
       builder: (context, state, child) {
         return Scaffold(
           floatingActionButton:
-              Config.showDebugWindow ? const DebugWindowOpenButton() : null,
+              Config.showDebugWindow ? const DevelopWindowOpenButton() : null,
           body: child,
         );
       },

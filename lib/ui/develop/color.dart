@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/ui/devider.dart';
 
-class ColorSamplePage extends StatelessWidget {
-  const ColorSamplePage({super.key});
+class ColorPalettePage extends StatelessWidget {
+  const ColorPalettePage({super.key});
 
   @override
   Widget build(BuildContext context) {

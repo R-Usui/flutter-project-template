@@ -9,8 +9,8 @@ import 'package:flutter_proj_template/config/config_notifier.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/theme/theme.dart';
 
-class DebugWindowOpenButton extends StatelessWidget {
-  const DebugWindowOpenButton({super.key});
+class DevelopWindowOpenButton extends StatelessWidget {
+  const DevelopWindowOpenButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,18 @@ class DebugWindowOpenButton extends StatelessWidget {
         showDialog(
           context: context,
           barrierColor: Theme.of(context).colorScheme.surface.withOpacity(0.15),
-          builder: (_) => const _DebugWindow(),
+          builder: (_) => const _DevelopWindow(),
         );
       },
-      tooltip: _LocalizedStrings.openDebugWindow.of(context),
+      tooltip: _LocalizedStrings.openDevelopWindow.of(context),
       mini: true,
-      child: const Icon(Icons.settings),
+      child: const Icon(Icons.widgets),
     );
   }
 }
 
-class _DebugWindow extends StatelessWidget {
-  const _DebugWindow();
+class _DevelopWindow extends StatelessWidget {
+  const _DevelopWindow();
 
   @override
   Widget build(BuildContext context) {
@@ -244,7 +244,7 @@ class _LanguageSelectButton extends StatelessWidget {
 }
 
 //=========================================================
-//Widget to go to terminal page
+//Widget to go to all pages
 
 class _GoToPageButtons extends StatelessWidget {
   const _GoToPageButtons();
@@ -274,11 +274,11 @@ class _GoToPageButtons extends StatelessWidget {
 //=========================================================
 
 class _LocalizedStrings {
-  static const openDebugWindow = LocalizedString(
-    "Open Debug Window",
+  static const openDevelopWindow = LocalizedString(
+    "Open Develop Window",
     {
-      Language.japanese: "デバッグメニューを開く",
-      Language.kana: "でばっぐめにゅーをひらく",
+      Language.japanese: "開発メニュー",
+      Language.kana: "かいはつ めにゅー を ひらく",
     },
   );
 
