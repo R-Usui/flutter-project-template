@@ -12,7 +12,7 @@ void main() {
   runApp(const MyApp());
 }
 
-/// Customized material app wrapped with [CompleteProvider]
+/// Customized [MaterialApp] wrapped with [CompleteProvider]
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
