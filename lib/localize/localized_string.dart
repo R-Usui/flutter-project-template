@@ -9,20 +9,39 @@ export 'package:flutter_proj_template/localize/language.dart';
 
 class LocalizedString {
   const LocalizedString(
-    this._defaultString, [
-    this._stringMap,
+    this._default, [
+    this._map,
   ]);
 
-  final String _defaultString;
-  final Map<Language, String>? _stringMap;
+  final String _default;
+  final Map<Language, String>? _map;
+
+  String get default_ => _default;
+
+  LocalizedString operator +(LocalizedString other) {
+    var newDefault = _default + other._default;
+
+    var languages = {..._map?.keys ?? [], ...other._map?.keys ?? []};
+    var newMap = {
+      for (var language in languages)
+        // ignore: unnecessary_this
+        language: this.in_(language) + other.in_(language)
+    };
+
+    return LocalizedString(newDefault, newMap);
+  }
 
   String of(BuildContext context) {
     Language? language = context.watch<ConfigNotifier?>()?.language;
 
     if (language == null) {
-      return _defaultString;
+      return _default;
     }
 
-    return _stringMap?[language] ?? _defaultString;
+    return _map?[language] ?? _default;
+  }
+
+  String in_(Language language) {
+    return _map?[language] ?? _default;
   }
 }

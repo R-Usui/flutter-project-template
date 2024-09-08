@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/route/vertical_page_transition_builder.dart';
+import 'package:flutter_proj_template/theme/color_seed.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   ThemeNotifier() {
@@ -31,22 +32,22 @@ class ThemeNotifier extends ChangeNotifier {
   // ====================================================
   // Color
 
-  Color _colorSchemeSeed = Colors.purple;
+  Color _seedColor = ColorSeed.baseColor.color;
 
-  Color get colorSchemeSeed => _colorSchemeSeed;
+  Color get seedColor => _seedColor;
 
-  void setColorSchemeSeed(Color value) {
-    _colorSchemeSeed = value;
+  void setSeedColor(Color value) {
+    _seedColor = value;
     notifyListeners();
   }
 
   ColorScheme get _lightColorScheme => ColorScheme.fromSeed(
-        seedColor: colorSchemeSeed,
+        seedColor: seedColor,
         brightness: Brightness.light,
       );
 
   ColorScheme get _darkColorScheme => ColorScheme.fromSeed(
-        seedColor: colorSchemeSeed,
+        seedColor: seedColor,
         brightness: Brightness.dark,
       );
 
@@ -74,7 +75,7 @@ class ThemeNotifier extends ChangeNotifier {
   // ====================================================
   // Theme Mode
 
-  ThemeMode _themeMode = ThemeMode.system;
+  ThemeMode _themeMode = ThemeMode.dark;
 
   ThemeMode get themeMode => _themeMode;
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/ui/debug/font_sample_page.dart';
+import 'package:flutter_proj_template/ui/sample/drawer.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -15,12 +16,15 @@ class Pages {
   static final typographySample =
       _Page("/typographySample", const TypographySamplePage());
   static final fontSample = _Page("/fontSample", const FontSamplePage());
+  static final drawerSample =
+      _Page("/drawerSample", const DrawerSamplePage());
 
-  static final values = [
+  static final values = <_Page>[
     debugTerminal,
     colorSchemeSample,
     typographySample,
     fontSample,
+    drawerSample,
   ];
 }
 

@@ -8,4 +8,13 @@ enum Language {
         japanese => kana,
         kana => english,
       };
+
+  @override
+  String toString() {
+    return switch (this) {
+      Language.english => "English",
+      Language.japanese => "日本語",
+      Language.kana => "にほんご",
+    };
+  }
 }

@@ -5,7 +5,7 @@ import 'package:flutter_proj_template/localize/language.dart';
 class ConfigNotifier extends ChangeNotifier {
   // ====================================================
   // Language
-  Language _language = Language.english;
+  Language _language = Language.japanese;
 
   Language get language => _language;
 
