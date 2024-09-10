@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/localize/dictionary.dart';
-import 'package:flutter_proj_template/localize/localized_string.dart';
+import 'package:flutter_project_template/localize/dictionary.dart';
+import 'package:flutter_project_template/localize/localized_string.dart';
 
 class DrawerSamplePage extends StatefulWidget {
   const DrawerSamplePage({super.key});

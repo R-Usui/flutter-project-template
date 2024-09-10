@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import 'package:flutter_proj_template/pages_and_route/route.dart';
-import 'package:flutter_proj_template/theme/theme.dart';
-import 'package:flutter_proj_template/localize/localized_string.dart';
-import 'package:flutter_proj_template/provider.dart';
+import 'package:flutter_project_template/pages_and_route/route.dart';
+import 'package:flutter_project_template/theme/theme.dart';
+import 'package:flutter_project_template/localize/localized_string.dart';
+import 'package:flutter_project_template/provider.dart';
 
 void main() {
   // setupWindow();

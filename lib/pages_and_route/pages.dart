@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_proj_template/ui/develop/font.dart';
-import 'package:flutter_proj_template/ui/develop/color.dart';
-import 'package:flutter_proj_template/ui/develop/typography.dart';
+import 'package:flutter_project_template/ui/develop/font.dart';
+import 'package:flutter_project_template/ui/develop/color.dart';
+import 'package:flutter_project_template/ui/develop/typography.dart';
 
-import 'package:flutter_proj_template/ui/note/drawer.dart';
-import 'package:flutter_proj_template/ui/note/animation.dart';
-import 'package:flutter_proj_template/ui/note/custom_paint.dart';
+import 'package:flutter_project_template/ui/note/drawer.dart';
+import 'package:flutter_project_template/ui/note/animation.dart';
+import 'package:flutter_project_template/ui/note/custom_paint.dart';
 
 class Pages {
   static final colorSample = _Page(

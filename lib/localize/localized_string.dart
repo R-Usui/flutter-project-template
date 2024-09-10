@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import 'package:flutter_proj_template/config/config_notifier.dart';
-import 'package:flutter_proj_template/localize/language.dart';
+import 'package:flutter_project_template/config/config_notifier.dart';
+import 'package:flutter_project_template/localize/language.dart';
 
-export 'package:flutter_proj_template/localize/language.dart';
+export 'package:flutter_project_template/localize/language.dart';
 
 class LocalizedString {
   const LocalizedString(

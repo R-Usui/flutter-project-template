@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_proj_template/config/config.dart';
-import 'package:flutter_proj_template/pages_and_route/pages.dart';
-import 'package:flutter_proj_template/ui/develop/window.dart';
+import 'package:flutter_project_template/config/config.dart';
+import 'package:flutter_project_template/pages_and_route/pages.dart';
+import 'package:flutter_project_template/ui/develop/window.dart';
+
 final router = GoRouter(
   initialLocation: Pages.colorSample.path,
   routes: [

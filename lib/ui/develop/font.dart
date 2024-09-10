@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_proj_template/localize/localized_string.dart';
-import 'package:flutter_proj_template/font/font_family.dart';
+import 'package:flutter_project_template/localize/localized_string.dart';
+import 'package:flutter_project_template/font/font_family.dart';
 
 class FontPalettePage extends StatelessWidget {
   const FontPalettePage({super.key});

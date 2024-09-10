@@ -1,4 +1,4 @@
-import 'package:flutter_proj_template/localize/localized_string.dart';
+import 'package:flutter_project_template/localize/localized_string.dart';
 
 class LocalizedDictionary {
   static const business = LocalizedString(

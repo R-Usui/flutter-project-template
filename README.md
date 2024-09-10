@@ -1,3 +1,3 @@
-# flutter_proj_template
+# flutter_project_template
 
 A new Flutter project.
