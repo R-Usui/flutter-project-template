@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/ui/note/animation.dart';
-import 'package:flutter_proj_template/ui/develop/font.dart';
-import 'package:flutter_proj_template/ui/note/drawer.dart';
-import 'package:flutter_proj_template/ui/note/custom_paint.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_proj_template/ui/develop/font.dart';
 import 'package:flutter_proj_template/ui/develop/color.dart';
 import 'package:flutter_proj_template/ui/develop/typography.dart';
 
+import 'package:flutter_proj_template/ui/note/drawer.dart';
+import 'package:flutter_proj_template/ui/note/animation.dart';
+import 'package:flutter_proj_template/ui/note/custom_paint.dart';
+
 class Pages {
-  static final colorPalette = _Page(
-    "/colorPalette",
+  static final colorSample = _Page(
+    "/colorSample",
     const ColorPalettePage(),
   );
 
-  static final typographyPalette = _Page(
-    "/typographyPalette",
+  static final typographySample = _Page(
+    "/typographySample",
     const TypographyPalettePage(),
   );
 
-  static final fontPalette = _Page(
-    "/fontPalette",
+  static final fontSample = _Page(
+    "/fontSample",
     const FontPalettePage(),
   );
 
@@ -43,9 +44,9 @@ class Pages {
   );
 
   static final values = <_Page>[
-    colorPalette,
-    typographyPalette,
-    fontPalette,
+    colorSample,
+    typographySample,
+    fontSample,
     //
     drawerSample,
     animationSample,
