@@ -13,7 +13,7 @@ final router = GoRouter(
       builder: (context, state, child) {
         return Scaffold(
           floatingActionButton:
-              Config.showDebugWindow ? const DevelopWindowOpenButton() : null,
+              Config.showDevelopWindow ? const DevelopWindowOpenButton() : null,
           body: child,
         );
       },
