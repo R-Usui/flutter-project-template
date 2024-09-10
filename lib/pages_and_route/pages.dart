@@ -26,8 +26,6 @@ class Pages {
     const FontPalettePage(),
   );
 
-  //
-
   static final drawerSample = _Page(
     "/drawerSample",
     const DrawerSamplePage(),
@@ -47,7 +45,6 @@ class Pages {
     colorSample,
     typographySample,
     fontSample,
-    //
     drawerSample,
     animationSample,
     customPaintSample,

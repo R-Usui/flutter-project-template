@@ -44,8 +44,8 @@ class _ArcPainter extends CustomPainter {
 
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
-      2 * pi * 3 / 8,
-      2 * pi * 6 / 8,
+      2 * pi * size.width / 1000,
+      2 * pi * size.height / 1000,
       true,
       paint,
     );

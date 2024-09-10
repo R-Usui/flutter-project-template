@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proj_template/route/pages.dart';
-import 'package:flutter_proj_template/theme/color_seed.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 
+import 'package:flutter_proj_template/pages_and_route/pages.dart';
+import 'package:flutter_proj_template/theme/color_seed.dart';
 import 'package:flutter_proj_template/config/config_notifier.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/theme/theme.dart';

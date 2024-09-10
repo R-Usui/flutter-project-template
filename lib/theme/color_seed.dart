@@ -12,6 +12,7 @@ enum ColorSeed {
   pink('Pink', Colors.pink);
 
   const ColorSeed(this.label, this.color);
+
   final String label;
   final Color color;
 }

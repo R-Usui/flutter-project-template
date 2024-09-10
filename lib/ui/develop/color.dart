@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_proj_template/localize/localized_string.dart';
 
 class ColorPalettePage extends StatelessWidget {

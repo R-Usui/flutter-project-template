@@ -1,5 +1,5 @@
 class Config {
   static bool isDebugMode = true;
 
-  static bool showDevelopWindow = false;
+  static bool showDevelopWindow = true;
 }

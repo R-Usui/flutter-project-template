@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import 'package:flutter_proj_template/route/route.dart';
+import 'package:flutter_proj_template/pages_and_route/route.dart';
 import 'package:flutter_proj_template/theme/theme.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/provider.dart';
