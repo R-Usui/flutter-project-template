@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
-import 'package:flutter_proj_template/ui/devider.dart';
 
 class TypographyPalettePage extends StatelessWidget {
   const TypographyPalettePage({super.key});
@@ -11,7 +10,13 @@ class TypographyPalettePage extends StatelessWidget {
         .textTheme
         .apply(displayColor: Theme.of(context).colorScheme.onSurface);
 
-    const devider = Devider();
+    var devider = Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      child: Container(
+        height: 3,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+    );
 
     return Scaffold(
       appBar: AppBar(

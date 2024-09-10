@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
-import 'package:flutter_proj_template/ui/devider.dart';
 
 class ColorPalettePage extends StatelessWidget {
   const ColorPalettePage({super.key});
@@ -9,7 +8,13 @@ class ColorPalettePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
 
-    const devider = Devider();
+    var devider = Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      child: Container(
+        height: 3,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+    );
 
     return Scaffold(
       appBar: AppBar(

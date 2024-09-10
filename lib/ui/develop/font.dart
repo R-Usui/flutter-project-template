@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_proj_template/localize/localized_string.dart';
 import 'package:flutter_proj_template/font/font_family.dart';
-import 'package:flutter_proj_template/ui/devider.dart';
 
 class FontPalettePage extends StatelessWidget {
   const FontPalettePage({super.key});
@@ -17,7 +16,14 @@ class FontPalettePage extends StatelessWidget {
           for (var family in FontFamilies.values)
             for (var isItalic in [false, true]) ...[
               FontSampleGroup(fontFamily: family, isItalic: isItalic),
-              const Devider(),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                child: Container(
+                  height: 3,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ]
         ],
       ),
