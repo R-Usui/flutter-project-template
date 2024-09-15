@@ -33,5 +33,17 @@ void clampTest() {
         throwsArgumentError,
       );
     });
+    test("clamp('A', min: 'B', max: 'C')", () {
+      expect(
+        clamp('A', min: 'B', max: 'C'),
+        'B',
+      );
+    });
+    test("clamp(1.1, min: 2.2, max: 3.3)", () {
+      expect(
+        clamp(1.1, min: 2.2, max: 3.3),
+        2.2,
+      );
+    });
   });
 }
