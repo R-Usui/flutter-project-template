@@ -65,7 +65,9 @@ class _TextFieldSampleState extends State<TextFieldSample> {
           focusNode: _focusNode,
         ),
         Text(
-          "You submitted '${_controller.text}'",
+          _controller.text == ""
+              ? "You haven't submitted anything yet."
+              : "You submitted '${_controller.text}.'",
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         TextButton(
