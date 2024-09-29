@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_template/ui/note/text_filed.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -41,6 +42,11 @@ class Pages {
     const CustomPaintSample(),
   );
 
+  static final textFieldSample = _Page(
+    "/textFieldSampe",
+    const TextFieldSamplePage(),
+  );
+
   static final values = <_Page>[
     colorSample,
     typographySample,
@@ -48,6 +54,7 @@ class Pages {
     drawerSample,
     animationSample,
     customPaintSample,
+    textFieldSample,
   ];
 }
 

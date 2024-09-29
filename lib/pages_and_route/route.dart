@@ -7,7 +7,7 @@ import 'package:flutter_project_template/pages_and_route/pages.dart';
 import 'package:flutter_project_template/ui/develop/window.dart';
 
 final router = GoRouter(
-  initialLocation: Pages.colorSample.path,
+  initialLocation: Pages.textFieldSample.path,
   routes: [
     ShellRoute(
       builder: (context, state, child) {
