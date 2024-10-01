@@ -95,6 +95,8 @@ class FormSample extends StatefulWidget {
 class FormSampleState extends State<FormSample> {
   final _formKey = GlobalKey<FormState>();
 
+  bool _isSnackBarVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -129,13 +131,22 @@ class FormSampleState extends State<FormSample> {
             },
           ),
           TextButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Submitted')),
-                );
-              }
-            },
+            onPressed: _isSnackBarVisible
+                ? null
+                : () {
+                    if (_formKey.currentState!.validate()) {
+                      setState(() => _isSnackBarVisible = true);
+
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(
+                            const SnackBar(content: Text('Submitted')),
+                          )
+                          .closed
+                          .then(
+                            (_) => setState(() => _isSnackBarVisible = false),
+                          );
+                    }
+                  },
             child: const Text("Submit"),
           )
         ],
