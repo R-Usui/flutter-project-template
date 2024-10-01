@@ -71,10 +71,22 @@ class _TextFieldSampleState extends State<TextFieldSample> {
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         TextButton(
-          onPressed: () {
-            _focusNode.requestFocus();
-          },
+          onPressed: () => _focusNode.requestFocus(),
           child: const Text("Focus"),
+        ),
+        TextButton(
+          onPressed: () {
+            _focusNode.unfocus();
+            setState(() {});
+          },
+          child: const Text("Submit"),
+        ),
+        TextButton(
+          onPressed: () {
+            _controller.clear();
+            setState(() {});
+          },
+          child: const Text("Clear"),
         )
       ],
     );
