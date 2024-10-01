@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_template/localize/localized_string.dart';
 import 'package:flutter_project_template/font/font_family.dart';
 
-class FontPalettePage extends StatelessWidget {
-  const FontPalettePage({super.key});
+class FontSamplePage extends StatelessWidget {
+  const FontSamplePage({super.key});
 
   @override
   Widget build(BuildContext context) {

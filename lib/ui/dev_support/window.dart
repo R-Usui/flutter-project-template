@@ -9,8 +9,8 @@ import 'package:flutter_project_template/config/config_notifier.dart';
 import 'package:flutter_project_template/localize/localized_string.dart';
 import 'package:flutter_project_template/theme/theme.dart';
 
-class DevelopWindowOpenButton extends StatelessWidget {
-  const DevelopWindowOpenButton({super.key});
+class DeveloperWindowOpenButton extends StatelessWidget {
+  const DeveloperWindowOpenButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class DevelopWindowOpenButton extends StatelessWidget {
         showDialog(
           context: context,
           barrierColor: Theme.of(context).colorScheme.surface.withOpacity(0.15),
-          builder: (_) => const _DevelopWindow(),
+          builder: (_) => const _DeveloperWindow(),
         );
       },
       tooltip: _LocalizedStrings.openDevelopWindow.of(context),
@@ -29,8 +29,8 @@ class DevelopWindowOpenButton extends StatelessWidget {
   }
 }
 
-class _DevelopWindow extends StatelessWidget {
-  const _DevelopWindow();
+class _DeveloperWindow extends StatelessWidget {
+  const _DeveloperWindow();
 
   @override
   Widget build(BuildContext context) {

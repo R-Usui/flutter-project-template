@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/ui/note/text_filed.dart';
+import 'package:flutter_project_template/ui/sample/text_filed.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:flutter_project_template/ui/develop/font.dart';
-import 'package:flutter_project_template/ui/develop/color.dart';
-import 'package:flutter_project_template/ui/develop/typography.dart';
+import 'package:flutter_project_template/ui/dev_support/font.dart';
+import 'package:flutter_project_template/ui/dev_support/color.dart';
+import 'package:flutter_project_template/ui/dev_support/typography.dart';
 
-import 'package:flutter_project_template/ui/note/drawer.dart';
-import 'package:flutter_project_template/ui/note/animation.dart';
-import 'package:flutter_project_template/ui/note/custom_paint.dart';
+import 'package:flutter_project_template/ui/sample/drawer.dart';
+import 'package:flutter_project_template/ui/sample/animation.dart';
+import 'package:flutter_project_template/ui/sample/custom_paint.dart';
 
 class Pages {
   static final colorSample = _Page(
     "/colorSample",
-    const ColorPalettePage(),
+    const ColorSamplePage(),
   );
 
   static final typographySample = _Page(
     "/typographySample",
-    const TypographyPalettePage(),
+    const TypographySamplePage(),
   );
 
   static final fontSample = _Page(
     "/fontSample",
-    const FontPalettePage(),
+    const FontSamplePage(),
   );
 
   static final drawerSample = _Page(

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:flutter_project_template/config/config.dart';
 import 'package:flutter_project_template/pages_and_route/pages.dart';
-import 'package:flutter_project_template/ui/develop/window.dart';
+import 'package:flutter_project_template/ui/dev_support/window.dart';
 
 final router = GoRouter(
   initialLocation: Pages.textFieldSample.path,
@@ -12,8 +12,9 @@ final router = GoRouter(
     ShellRoute(
       builder: (context, state, child) {
         return Scaffold(
-          floatingActionButton:
-              Config.showDevelopWindow ? const DevelopWindowOpenButton() : null,
+          floatingActionButton: Config.showDevelopWindow
+              ? const DeveloperWindowOpenButton()
+              : null,
           body: child,
         );
       },
