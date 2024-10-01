@@ -139,7 +139,16 @@ class FormSampleState extends State<FormSample> {
 
                       ScaffoldMessenger.of(context)
                           .showSnackBar(
-                            const SnackBar(content: Text('Submitted')),
+                            SnackBar(
+                              content: const Text('Submitted'),
+                              action: SnackBarAction(
+                                label: "Close",
+                                onPressed: () {
+                                  ScaffoldMessenger.of(context)
+                                      .hideCurrentSnackBar();
+                                },
+                              ),
+                            ),
                           )
                           .closed
                           .then(
