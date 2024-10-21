@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_template/ui/sample/text_filed.dart';
+import 'package:flutter_project_template/ui/util/map2d/map2d.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -47,6 +48,11 @@ class Pages {
     const TextFieldSamplePage(),
   );
 
+  static final map2dSample = _Page(
+    "/map2dSample",
+    const Map2dSamplePage(),
+  );
+
   static final values = <_Page>[
     colorSample,
     typographySample,
@@ -55,6 +61,7 @@ class Pages {
     animationSample,
     customPaintSample,
     textFieldSample,
+    map2dSample,
   ];
 }
 
