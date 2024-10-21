@@ -12,7 +12,7 @@ final router = GoRouter(
     ShellRoute(
       builder: (context, state, child) {
         return Scaffold(
-          floatingActionButton: Config.showDevelopWindow
+          floatingActionButton: Config.showDeveloperWindow
               ? const DeveloperWindowOpenButton()
               : null,
           body: child,
